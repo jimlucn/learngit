@@ -1,0 +1,64 @@
+﻿cms0.1
+1、问题：分两个css来实现时basic.css+index.php出现定位不正确问题
+   解决：@CHARSET "UTF-8"; 第一行说明漏了一个封号“;”导致奇怪问题，花了半个多小时和原文件对比。
+   ps.经常会犯这种错误少个结尾符号，浪费大量时间
+
+cms0.2
+
+1、defined() 已经定义某个常量
+
+2、//判断PHP版本是否过低
+if(PHP_VERSION<'4.1.0'){
+	exit("THE PHP VERSION IS TOO LOW!");
+}
+'4.1.0'漏了加单引号，经常不知道什么时候加引号
+
+3、substr（）函数
+
+4、microtime()函数
+
+5、explode()函数
+.
+
+cms0.4 
+javascript
+
+列表居中margin:0 auto; 一定要先设定width宽度
+
+cursor：pointer； 鼠标移动上去指针变成手型，chrome浏览器好像没效果。
+
+range(1,9)取1-9数字
+
+两种循环：
+<?php for($i=1;$i<10;$i++) {?>
+		<dd><img src="images/face/m0<?php echo $i?>.gif" alt="头像<?php echo $i?>"></dd>
+		<?php }?>
+		<?php foreach(range(10,64) as $i) {?>
+		<dd><img src="images/face/m<?php echo $i?>.gif" alt="头像<?php echo $i?>"></dd>
+		<?php }?>
+
+
+不理解：1、div块face包含了h3和dl，为什么加一条外边框，dl却不显示在里面？
+<div id="face">
+   <h3>更换头像</h3>
+	<dl>
+		<dt></dt>
+		<?php for($i=1;$i<10;$i++) {?>
+		<dd><img src="images/face/m0<?php echo $i?>.gif" alt="头像<?php echo $i?>"></dd>
+		<?php }?>
+		<?php foreach(range(10,64) as $i) {?>
+		<dd><img src="images/face/m<?php echo $i?>.gif" alt="头像<?php echo $i?>"></dd>
+		<?php }?>
+
+	</dl>
+</div>
+2、dl加外边框后，同样dd显示的内容也不在外边框内。不知道为什么？
+
+js一点不会
+//等在网页加载完毕再执行
+window.onload = function () {
+	var faceimg = document.getElementById('faceimg');
+	faceimg.onclick = function () {
+		window.open('face.php','face','width=400,height=400,top=0,left=0,scrollbars=1');
+	}
+};
