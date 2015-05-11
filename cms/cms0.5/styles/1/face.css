@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+body{
+	width: auto;
+}
+
+#face h3{
+	width: 80%;
+	margin: 10px auto;
+    text-align: center;
+    height:30px;
+	line-height:30px;
+    border: 1px dashed #333;
+
+}
+#face dl{
+	width: 80%;
+	margin: 0 auto;
+	
+	
+}
+#face dd{
+    width: 90px;
+	float: left;
+	text-align: center;
+}
